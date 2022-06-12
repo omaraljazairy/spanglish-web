@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+    website:
+        build: .
+        container_name: spanglish-web
+        command: npm run start
+        volumes:
+            - ./:/website
+            - /website/node_modules
+            - .env:/website/.env
+        ports:
+            - "3000:3000"
+        environment: 
+            - NODE_ENV=${env}
