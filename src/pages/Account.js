@@ -7,9 +7,7 @@ class Account extends Component {
     
     // console.log("home props received: ", this.props);
       return(
-        <>
           <h3>Account</h3>
-        </>
       )
   }
 }

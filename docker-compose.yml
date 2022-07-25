@@ -4,7 +4,8 @@ services:
     website:
         build: .
         container_name: spanglish-web
-        command: npm run start
+        # command: npm run start
+        command: tail -f /dev/null
         volumes:
             - ./:/website
             - /website/node_modules
