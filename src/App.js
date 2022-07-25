@@ -1,7 +1,7 @@
 import { React, Component } from 'react'
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Route, Router, Switch } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 import Header from '../src/components/Header';
 import Body from '../src/components/Body';
@@ -29,25 +29,25 @@ class App extends Component {
   render() {
 
     return (
-      <BrowserRouter history={history}>
+      <Router history={history}>
       <Header/>
       <Container>
         <Body>
-          <Routes>
-            <Route path='/home' element={<Home/>} />
-            <Route exact path='/language' element={<Language/>} />
-            <Route exact path='/category' element={<Category/>} />
-            <Route path='/word' element={<Word/>} />
-            <Route path='/verb' element={<Verb/>} />
-            <Route path='/quiz' element={<Quiz/>} />
-            <Route path='/question' element={<Question/>} />
-            <Route path='/result' element={<Result/>} />
-            <Route path='/account' element={<Account/>}/>
-            <Route path="*" element={<NoMatch/>} />
-          </Routes>
+          <Switch>
+            <Route path='/home' component={Home} />
+            <Route exact path='/language' component={Language} />
+            <Route exact path='/category' component={Category} />
+            <Route path='/word' component={Word} />
+            <Route path='/verb' component={Verb} />
+            <Route path='/quiz' component={Quiz} />
+            <Route path='/question' component={Question} />
+            <Route path='/result' component={Result} />
+            <Route path='/account' component={Account}/>
+            <Route path="*" component={NoMatch} />
+          </Switch>
         </Body>
       </Container>
-    </BrowserRouter>
+    </Router>
     );
   }
 }

@@ -14,12 +14,12 @@ const Header = () => {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link><NavLink to='/home' style={style}>Home</NavLink></Nav.Link>
-                        <Nav.Link><NavLink to='/language' style={style}>Language</NavLink></Nav.Link>
-                        <Nav.Link><NavLink to='/category' style={style}>Category</NavLink></Nav.Link>
-                        <Nav.Link><NavLink to='/word' style={style}>Words</NavLink></Nav.Link>
-                        <Nav.Link><NavLink to='/quiz' style={style}>Quiz</NavLink></Nav.Link>
-                        <Nav.Link><NavLink to='/result' style={style}>QuizResults</NavLink></Nav.Link>
+                        <Nav.Link as={NavLink} to='/home' style={style}>Home</Nav.Link>
+                        <Nav.Link as={NavLink} to='/language' style={style}>Language</Nav.Link>
+                        <Nav.Link as={NavLink} to='/category' style={style}>Category</Nav.Link>
+                        <Nav.Link as={NavLink} to='/word' style={style}>Words</Nav.Link>
+                        <Nav.Link as={NavLink} to='/quiz' style={style}>Quiz</Nav.Link>
+                        <Nav.Link as={NavLink} to='/result' style={style}>QuizResults</Nav.Link>
                     </Nav>
                     <Form className="d-flex">
                         <FormControl
@@ -30,7 +30,9 @@ const Header = () => {
                         />
                         <Button variant="light">Search</Button>
                     </Form>
-                        <Nav.Link><NavLink to='/account' style={style}>Account</NavLink></Nav.Link>
+                    <Nav className="me-2">
+                        <Nav.Link as={NavLink} to='/account' style={style}>Account</Nav.Link>
+                    </Nav>
                 </Navbar.Collapse>
             </Container>
         </Navbar>
