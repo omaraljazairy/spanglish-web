@@ -7,6 +7,7 @@ import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import { apiUri } from '../services/constants';
 import { error_response_output } from '../services/errorresponse';
+import '../assets/css/tableheader.css'
 
 
 class Category extends Component {
@@ -284,7 +285,19 @@ class Category extends Component {
                         />
                     </Col>
                 </Row>
-                <BootstrapTable keyField='id' data={ categoryList } columns={ columns } cellEdit={ cellEdit }/>
+                <BootstrapTable 
+                    keyField='id' 
+                    data={ categoryList } 
+                    columns={ columns } 
+                    cellEdit={ cellEdit }
+                    headerClasses='headerStyle' 
+                    border
+                    hover
+                    condensed
+                    striped
+                    bootstrap4
+                    loading
+                />
             </Container>
             
         )

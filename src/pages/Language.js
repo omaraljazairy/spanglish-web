@@ -7,6 +7,7 @@ import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import { apiUri } from '../services/constants';
 import { error_response_output } from '../services/errorresponse';
+import '../assets/css/tableheader.css'
 
 
 class Language extends Component {
@@ -228,7 +229,7 @@ class Language extends Component {
         const alert = this.state.showAlert
         const errMsg = this.state.responseMsg
         const alertStatus = this.state.submitStatus ? "success" : "danger"
-        const products = this.state.lan
+        const languages = this.state.lan
         const deleteAction = (cell, row, rowIndex, formatExtraData) => {
             return (
               <Button variant="contained" color="secondary"
@@ -307,59 +308,19 @@ class Language extends Component {
                         />
                     </Col>
                 </Row>
-                <BootstrapTable keyField='id' data={ products } columns={ columns } cellEdit={ cellEdit }/>
-                {/* <Table striped bordered hover>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <Form.Control 
-                                required
-                                type="text" 
-                                placeholder="Code"
-                                onChange={(event) => this.setState({lanCode: event.target.value})}
-                                />
-                            </td>
-                            <td>
-                                <Form.Control
-                                 type="text" 
-                                 placeholder="Name"
-                                 onChange={(event) => this.setState({lanName: event.target.value})}
-                                 />
-                            </td>
-                            <td>
-                                <Button variant="primary" type="submit" onClick={this.handleAddLanguage}>
-                                    Add
-                                </Button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </Table>
-                <Table striped bordered hover>
-                    <thead>
-                        <tr>
-                            <th>Id</th>
-                            <th>Name</th>
-                            <th>Code</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {this.state.lan ? this.state.lan.map(languages => (
-                            <tr key={languages.id}>
-                                <td>
-                                    <Button variant="danger" type="submit" onClick={() => this.handleDeleteLanguage(languages.id)}>Delete</Button>
-                                    <CustomModal isShow={this.state.isEdit} name={languages.name} edit={this.handleEditLanguage} handleEdit={this.handleEdit}/>
-                                </td>
-                                 <td>
-                                    {languages.name}
-                                    </td>
-                                 <td onClick={() => console.log('click')}>{languages.code}</td>
-                            </tr>
-                            ) 
-                        ) : null
-                    }
-                    </tbody>
-                </Table>
-                <BootstrapTable keyField='id' data={this.state.lan} columns={columns}/> */}
+                <BootstrapTable 
+                    keyField='id' 
+                    data={ languages } 
+                    columns={ columns } 
+                    cellEdit={ cellEdit }
+                    headerClasses='headerStyle' 
+                    border
+                    hover
+                    condensed
+                    striped
+                    bootstrap4
+                    loading                    
+                />
             </Container>
             
         )

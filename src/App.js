@@ -9,7 +9,7 @@ import { NoMatch } from './pages/NoMatch';
 import Home from './pages/Home';
 import Language from './pages/Language';
 import Category from './pages/Category';
-import Word from './pages/Word';
+import Vocabulary from './pages/Vocabulary';
 import Verb from './pages/Verb';
 import Quiz from './pages/Quiz';
 import Question from './pages/Question';
@@ -37,7 +37,7 @@ class App extends Component {
             <Route path='/home' component={Home} />
             <Route exact path='/language' component={Language} />
             <Route exact path='/category' component={Category} />
-            <Route path='/word' component={Word} />
+            <Route path='/vocabulary' component={Vocabulary} />
             <Route path='/verb' component={Verb} />
             <Route path='/quiz' component={Quiz} />
             <Route path='/question' component={Question} />

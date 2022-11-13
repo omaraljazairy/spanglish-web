@@ -72,3 +72,5 @@ amplifytools.xcconfig
 .secret-*
 **.sample
 #amplify-do-not-edit-end
+testscript.js
+newtest.js
